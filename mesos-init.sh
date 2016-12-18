@@ -6,15 +6,15 @@ apt-get update
 # Install a few utility tools.
 apt-get install -y tar wget git
 
-# Install the latest OpenJDK.
-#apt-get install -y openjdk-8-jdk
-./oracle-jdk-installer.sh
-
 # Install autotools (Only necessary if building from git repository).
 apt-get install -y autoconf libtool
 
 # Install other Mesos dependencies.
 apt-get -y install build-essential python-dev libcurl4-nss-dev libsasl2-dev libsasl2-modules maven libapr1-dev libsvn-dev
+
+# Install the latest OpenJDK.
+#apt-get install -y openjdk-8-jdk
+./oracle-jdk-installer.sh
 
 pwdDir=$(pwd)
 dirName=`dirname $0`
