@@ -10,10 +10,10 @@ then
 fi
 
 workDir=`tar -tzf $fileName | head -1 | cut -f1 -d"/"`
-if [ ! -d /opt/jdk/$workDor ]
+if [ ! -d /opt/jdk/$workDir ]
 then
   mkdir -p /opt/jdk/
-  tar -zxv $fileName -C /opt/jdk
+  tar -zxvf $fileName -C /opt/jdk
 fi
 
 ./remove-default-jdk.sh
@@ -23,3 +23,5 @@ update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_112/bin/jav
 
 java -version
 javac -version
+
+export JAVA_HOME=/opt/jdk/$workDir

@@ -1,7 +1,6 @@
 #!/bin/bash -
 
-# Update the packages.
-apt-get update
+./init.sh
 
 # Install a few utility tools.
 apt-get install -y tar wget git
@@ -10,7 +9,7 @@ apt-get install -y tar wget git
 apt-get install -y autoconf libtool
 
 # Install other Mesos dependencies.
-apt-get -y install build-essential python-dev libcurl4-nss-dev libsasl2-dev libsasl2-modules maven libapr1-dev libsvn-dev
+apt-get -y install build-essential python-dev libcurl4-nss-dev libsasl2-dev libsasl2-modules maven libapr1-dev libsvn-dev zlib1g-dev 
 
 # Install the latest OpenJDK.
 #apt-get install -y openjdk-8-jdk
