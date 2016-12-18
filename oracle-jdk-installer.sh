@@ -16,7 +16,7 @@ then
   tar -zxvf $fileName -C /opt/jdk
 fi
 
-./remove-default-jdk.sh
+#./remove-default-jdk.sh
 
 update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_112/bin/java 100
 update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_112/bin/javac 100
@@ -25,3 +25,4 @@ java -version
 javac -version
 
 export JAVA_HOME=/opt/jdk/$workDir
+export PATH=$PATH:$JAVA_HOME/bin
