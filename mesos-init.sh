@@ -7,7 +7,7 @@ apt-get -y install build-essential python-dev libcurl4-nss-dev libsasl2-dev libs
 
 # Install the latest OpenJDK.
 #apt-get install -y openjdk-8-jdk
-./oracle-jdk-installer.sh
+. ./oracle-jdk-installer.sh
 
 pwdDir=$(pwd)
 dirName=`dirname $0`
