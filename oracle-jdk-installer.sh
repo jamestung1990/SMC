@@ -9,12 +9,14 @@ then
   wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" $url
 fi
 
-workDir=`basename -s .tar.gz $fileName`
+workDir=`tar -tzf $fileName | head -1 | cut -f1 -d"/"`
 if [ ! -d /opt/jdk/$workDor ]
 then
-  mkdir /opt/jdk/
+  mkdir -p /opt/jdk/
   tar -zxv $fileName -C /opt/jdk
 fi
+
+./remove-default-jdk.sh
 
 update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.8.0_112/bin/java 100
 update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.8.0_112/bin/javac 100
